@@ -1,149 +1,73 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #121212;
-    color: #fff;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  background: linear-gradient(to bottom right, #1d2b64, #f8cdda);
+  color: #fff;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .container {
-    width: 90%;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 16px;
-    background-color: #1e1e1e;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
 }
 
-h1 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-/* Model Selector */
-.model-selector {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 16px;
-    color: #fff;
-}
-
-select {
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #444;
-}
-
-/* Input Area */
-.input-area {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-    border: 1px solid #444;
-    min-height: 100px;
-    resize: vertical;
-}
-
-/* Gradient Button */
 button {
-    background: linear-gradient(45deg, #20B2AA, #32CD32, #FFD700);
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
+  background: #ff6a00;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  margin-top: 20px;
 }
 
 button:hover {
-    background: linear-gradient(45deg, #17a59e, #28b23a, #f0b400);
+  background: #e65c00;
+  transform: scale(1.05);
 }
 
-button i {
-    margin-right: 8px;
+.rocket {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: url('https://cdn-icons-png.flaticon.com/512/321/321817.png') no-repeat center/contain;
+  animation: rocket-fly 1s linear infinite;
 }
 
-/* Progress Bar */
-.progress-bar {
-    width: 0%;
-    height: 10px;
-    background-color: #32CD32;
-    display: none;
-    margin-bottom: 15px;
-    transition: width 2s ease;
+@keyframes rocket-fly {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 
-/* Image Container and Result */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+.speed-text {
+  font-size: 3rem;
+  margin-top: 20px;
+  font-weight: bold;
 }
-
-#generatedImage {
-    max-width: 100%;
-    margin-top: 10px;
-    display: none;
-}
-
-.download-btn {
-    display: none;
-    margin-top: 10px;
-    cursor: pointer;
-    color: #20B2AA;
-    font-size: 18px;
-}
-
-#notification {
-    display: none;
-    color: #20B2AA;
-    margin-top: 20px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #fff;
-}
-
-footer a {
-    color: #20B2AA;
-  }
